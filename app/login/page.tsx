@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button, Form, Input } from 'antd';
+import { Button, Divider, Form, Input } from 'antd';
 import Password from 'antd/es/input/Password';
 import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { signIn } from '@/app/auth/signin';
@@ -10,11 +10,15 @@ import Title from 'antd/es/typography/Title';
 import SignInLogo from '@/components/SigninLogo';
 
 export type FieldType = {
+  name: string;
   email: string;
   password: string;
+  confirmPassword: string;
 };
 
 export default function Login() {
+  const { Item } = Form;
+
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
       <SignInLogo />
@@ -28,6 +32,7 @@ export default function Login() {
       </Title>
       <Form
         name="basic"
+        layout="vertical"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}
@@ -35,14 +40,22 @@ export default function Login() {
         onFinish={signIn}
         autoComplete="off"
       >
-        <Input placeholder="Email Address" required={true} />
-        <Password
-          placeholder="Password"
-          iconRender={(visible) =>
-            visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-          }
-          required={true}
-        />
+        <Item
+          name="email"
+          label="Email"
+          rules={[{ required: true }, { type: 'email', warningOnly: true }]}
+        >
+          <Input name="email" placeholder="Email Address" required={true} />
+        </Item>
+        <Item name="password" label="Password" rules={[{ required: true }]}>
+          <Password
+            placeholder="Password"
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
+            required={true}
+          />
+        </Item>
         <Button
           style={{
             backgroundColor: '#00B890',
@@ -63,6 +76,7 @@ export default function Login() {
           회원가입하기
         </Link>
       </div>
+      <Divider />
     </div>
   );
 }
