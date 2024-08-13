@@ -179,7 +179,7 @@ export default function Signup() {
           <Item
             name="name"
             label="Name"
-            rules={[{ required: true }, { type: 'string', min: 6 }]}
+            rules={[{ required: true }, { type: 'string', min: 3 }]}
           >
             <Input placeholder="Name" size="large" style={{ width: '100%' }} />
           </Item>
