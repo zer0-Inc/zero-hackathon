@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   const pathname = usePathname();
 
+  const isFootNavBar =
+    pathname === '/' || pathname === '/login' || pathname === '/signup';
+
   return (
     <html lang="en" className={GeistSans.className}>
       <body className="bg-background text-foreground">
@@ -45,7 +48,7 @@ export default function RootLayout({
                 }}
               >
                 {children}
-                {!(pathname in ['/', '/login', '/signup']) && <FootNavBar />}
+                {!isFootNavBar && <FootNavBar />}
               </div>
             </Content>
           </Layout>

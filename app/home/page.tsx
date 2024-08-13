@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-export default async function ProtectedPage() {
+export default async function HomePage() {
   const supabase = createClient();
 
   const cookieStore = cookies();
