@@ -1,3 +1,4 @@
+'use client'; // 클라이언트 컴포넌트로 설정
 import React from 'react';
 import Avatar1Logo from '@/components/logo/ranking/Avatar1';
 import Avatar2Logo from '@/components/logo/ranking/Avatar2';
@@ -7,8 +8,16 @@ import Avatar5Logo from '@/components/logo/ranking/Avatar5';
 import CrownGoldLogo from '@/components/logo/ranking/Medal_Gold';
 import CrownSilverLogo from '@/components/logo/ranking/Medal_Silver';
 import CrownBronzeLogo from '@/components/logo/ranking/Medal_Bronze';
+import { useRouter } from 'next/navigation';
+import LeftArrow from '@/components/logo/LeftArrow';
 
 export default function Ranking() {
+  const router = useRouter();
+
+  const goToMyPage = () => {
+    router.push('/my-page');
+  };
+
   const rankings = [
     {
       id: 1,
@@ -37,15 +46,17 @@ export default function Ranking() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
-      {/* 상단 섹션 */}
-      <div className="bg-white p-6 border-b flex flex-col items-center">
-        <h1 className="text-xl font-bold mb-2">신뢰 포인트 랭킹</h1>
-        <p className="text-black text-center font-bold">
-          부동산 사기 예방을 도와주는 공인중개사들이에요
-          <br />
-          점수가 높을수록 신뢰도가 높은 공인중개사에요
-        </p>
+      <div className="bg-white p-6  flex items-center relative">
+        <div className="absolute left-0 p-4" onClick={goToMyPage}>
+          <LeftArrow />
+        </div>
+        <h1 className="text-xl font-bold mx-auto">신뢰 포인트 랭킹</h1>
       </div>
+      <p className="py-4 text-black border-b text-center font-bold">
+        부동산 사기 예방을 도와주는 공인중개사들이에요
+        <br />
+        점수가 높을수록 신뢰도가 높은 공인중개사에요
+      </p>
 
       {/* 랭킹 리스트 */}
       <div

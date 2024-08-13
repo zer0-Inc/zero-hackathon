@@ -1,7 +1,6 @@
 'use client'; // 클라이언트 컴포넌트로 설정
 
 import React from 'react';
-import FootNavBar from '@/components/FootNavBar'; // 하단 네비게이션 바
 import AvatarLogo from '@/components/logo/AvatarLogo';
 import RightArrow from '@/components/logo/RightArrow';
 import { useRouter } from 'next/navigation';

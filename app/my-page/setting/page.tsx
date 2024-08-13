@@ -1,3 +1,4 @@
+'use client'; // 클라이언트 컴포넌트로 설정
 import React from 'react';
 import { Switch } from 'antd'; // Ant Design의 Switch 컴포넌트를 사용
 import EarthLogo from '@/components/logo/setting/EarthLogo'; // 지구 아이콘
@@ -7,15 +8,24 @@ import SoundLogo from '@/components/logo/setting/SoundLogo';
 import ScreenLogo from '@/components/logo/setting/ScreenLogo';
 import PersonLogo from '@/components/logo/setting/PersonLogo';
 import SettingLogo from '@/components/logo/setting/SettingLogo';
+import { useRouter } from 'next/navigation';
+import LeftArrow from '@/components/logo/LeftArrow';
 
 export default function Settings() {
+  const router = useRouter();
+
+  const goToMyPage = () => {
+    router.push('/my-page');
+  };
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* 상단 섹션 */}
-      <div className="bg-white p-6 border-b flex flex-col items-center relative">
-        <h1 className="text-xl font-bold">환경 설정</h1>
+      <div className="bg-white p-6  flex items-center relative">
+        <div className="absolute left-0 p-4" onClick={goToMyPage}>
+          <LeftArrow />
+        </div>
+        <h1 className="text-xl font-bold mx-auto">환경 설정</h1>
       </div>
-
       {/* 설정 리스트 */}
       <div className="flex-1 bg-white divide-y divide-gray-200">
         <div className="flex justify-between items-center p-4">
