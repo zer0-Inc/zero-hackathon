@@ -12,10 +12,16 @@ import Link from "next/link";
 export default function FootNavBar() {
   const pathname = usePathname();
 
+  const isHome =
+    pathname === "/home" ||
+    pathname === "/upload" ||
+    pathname === "/searching" ||
+    pathname === "/result";
+
   return (
     <div className="absolute border-t-4 h-20 inset-x-0 bottom-0 w-full items-center place-content-center bg-white z-50 flex gap-24">
       <Link className="cursor-pointer" href="/home">
-        {pathname === "/home" ? <HomeLogo /> : <HomeGrayLogo />}
+        {isHome ? <HomeLogo /> : <HomeGrayLogo />}
       </Link>
       <Link className="cursor-pointer" href="/map">
         {pathname === "/map" ? <MapLogo /> : <MapGrayLogo />}
