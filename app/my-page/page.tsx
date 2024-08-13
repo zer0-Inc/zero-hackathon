@@ -12,6 +12,9 @@ export default function MyPage() {
   const goToRankingPage = () => {
     router.push('/my-page/ranking');
   };
+  const goToSettingPage = () => {
+    router.push('/my-page/setting');
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
@@ -48,7 +51,10 @@ export default function MyPage() {
             <span>서비스 이용약관</span>
             <RightArrow />
           </li>
-          <li className="py-4 flex justify-between items-center">
+          <li
+            className="py-4 flex justify-between items-center"
+            onClick={goToSettingPage}
+          >
             <span>환경 설정</span>
             <RightArrow />
           </li>
