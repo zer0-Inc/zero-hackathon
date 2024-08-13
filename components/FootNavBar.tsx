@@ -20,7 +20,7 @@ export default function FootNavBar() {
     pathname === "/result-detail";
 
   return (
-    <div className="absolute border-t-4 h-20 inset-x-0 bottom-0 w-full items-center place-content-center bg-white z-50 flex gap-24">
+    <div className="absolute border-t-4 h-20 inset-x-0 bottom-0 w-full items-center place-content-center bg-white z-20 flex gap-24">
       <Link className="cursor-pointer" href="/home">
         {isHome ? <HomeLogo /> : <HomeGrayLogo />}
       </Link>

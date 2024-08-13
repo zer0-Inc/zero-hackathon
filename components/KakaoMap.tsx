@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { KakaoMapModal } from "@/components/KakaoMapModal";
 
 declare global {
   interface Window {
@@ -8,7 +9,7 @@ declare global {
   }
 }
 
-interface Place {
+export interface Place {
   id: number;
   name: string;
   address: string;
@@ -104,6 +105,15 @@ export const placeList: Place[] = [
 ];
 
 export default function KakaoMap() {
+  const [isMarkerClicked, setIsMarkerClicked] = useState<boolean>(false);
+  const [selectedMarker, setSelectedMarker] = useState<Place>({
+    id: 1,
+    name: "새터마을우미이노스빌201동",
+    address: "경기도 용인시 수지구 죽전동 1212(현암로 100-12)",
+    lat: 37.331031,
+    lng: 127.119265,
+  });
+
   useEffect(() => {
     const kakaoMapScript = document.createElement("script");
     kakaoMapScript.async = false;
@@ -128,9 +138,15 @@ export default function KakaoMap() {
 
           var marker = new window.kakao.maps.Marker({
             position: markerPosition,
+            clickable: true,
           });
 
           marker.setMap(map);
+
+          window.kakao.maps.event.addListener(marker, "click", function () {
+            setSelectedMarker(place);
+            setIsMarkerClicked(true);
+          });
         }
       });
     };
@@ -143,6 +159,11 @@ export default function KakaoMap() {
       <div className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
         <div id="map" style={{ width: "100%", height: "100%" }}></div>
       </div>
+      <KakaoMapModal
+        isMarkerClicked={isMarkerClicked}
+        marker={selectedMarker}
+        onCancel={() => setIsMarkerClicked(false)}
+      />
     </main>
   );
 }
