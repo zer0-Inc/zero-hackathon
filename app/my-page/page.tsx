@@ -1,9 +1,21 @@
+'use client'; // 클라이언트 컴포넌트로 설정
+
 import React from 'react';
 import FootNavBar from '@/components/FootNavBar'; // 하단 네비게이션 바
 import AvatarLogo from '@/components/logo/AvatarLogo';
 import RightArrow from '@/components/logo/RightArrow';
+import { useRouter } from 'next/navigation';
 
 export default function MyPage() {
+  const router = useRouter();
+
+  const goToRankingPage = () => {
+    router.push('/my-page/ranking');
+  };
+  const goToSettingPage = () => {
+    router.push('/my-page/setting');
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       {/* 상단 프로필 섹션 */}
@@ -20,7 +32,10 @@ export default function MyPage() {
           <li className="py-4 flex justify-between items-center">
             <span>내 신뢰 포인트 : 1997</span>
           </li>
-          <li className="py-4 flex justify-between items-center">
+          <li
+            className="py-4 flex justify-between items-center"
+            onClick={goToRankingPage}
+          >
             <span>랭킹 확인하기</span>
             <RightArrow />
           </li>
@@ -36,7 +51,10 @@ export default function MyPage() {
             <span>서비스 이용약관</span>
             <RightArrow />
           </li>
-          <li className="py-4 flex justify-between items-center">
+          <li
+            className="py-4 flex justify-between items-center"
+            onClick={goToSettingPage}
+          >
             <span>환경 설정</span>
             <RightArrow />
           </li>
