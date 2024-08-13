@@ -16,7 +16,8 @@ export default function FootNavBar() {
     pathname === "/home" ||
     pathname === "/upload" ||
     pathname === "/searching" ||
-    pathname === "/result";
+    pathname === "/result" ||
+    pathname === "/result-detail";
 
   return (
     <div className="absolute border-t-4 h-20 inset-x-0 bottom-0 w-full items-center place-content-center bg-white z-50 flex gap-24">
