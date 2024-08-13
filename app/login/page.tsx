@@ -174,7 +174,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { signIn } from '@/app/auth/signin';
 import Link from 'next/link';
 import Title from 'antd/es/typography/Title';
-import SignInLogo from '@/components/SigninLogo';
+import SignInLogo from '@/components/logo/SigninLogo';
 
 export type FieldType = {
   name: string;

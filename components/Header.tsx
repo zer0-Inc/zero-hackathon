@@ -1,5 +1,5 @@
-import NextLogo from "@/components/NextLogo";
-import BoardingButton from "@/components/BoardingButton";
+import NextLogo from "@/components/logo/NextLogo";
+import BoardingButton from "@/components/button/BoardingButton";
 
 export default function Header() {
   return (

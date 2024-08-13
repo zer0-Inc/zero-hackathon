@@ -7,6 +7,7 @@ import { Layout } from 'antd';
 import { Content } from 'antd/lib/layout/layout';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import FootNavBar from '@/components/FootNavBar';
 
 export default function RootLayout({
   children,
@@ -14,6 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+
+  const isFootNavBar =
+    pathname === '/' || pathname === '/login' || pathname === '/signup';
 
   return (
     <html lang="en" className={GeistSans.className}>
@@ -40,9 +44,11 @@ export default function RootLayout({
                   backgroundColor: `${pathname === '/' ? '#00B890' : '#fff'}`,
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                   borderRadius: '8px',
+                  position: 'relative',
                 }}
               >
                 {children}
+                {!isFootNavBar && <FootNavBar />}
               </div>
             </Content>
           </Layout>

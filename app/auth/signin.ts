@@ -28,6 +28,6 @@ export async function signIn(formData: FieldType) {
       value: authUser.id,
     });
 
-    return redirect('/protected');
+    return redirect('/home');
   }
 }
