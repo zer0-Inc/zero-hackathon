@@ -16,35 +16,7 @@
 <hr/>
 
 ## Preview
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/c0e363b9-f64b-4b1c-9d1c-ab9b973f8b0b">
-</video>
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/a5243eb8-c5ec-4d19-9189-b1da0b791828">
-</video>
-
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/10d82f6e-9607-4d3e-b204-e1e1a572b5f2">
-</video>
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/a3a8366c-ca32-4293-80d6-8322e6f76379">
-</video>
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/a32d0051-410b-4449-b900-7abd3d7d4e53">
-</video>
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/8954e08f-cd19-410f-8365-44f7db3b7d06">
-</video>
-
-<video width="320" height="240" controls>
-  <source src="https://github.com/user-attachments/assets/3cd885b9-5185-42ff-a48f-809d250ddad5">
-</video>
+[![2024 K-HTML 해커톤 대회: 단국대학교 ZERO 팀](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FTsLqET1KUQg)](https://youtu.be/TsLqET1KUQg)
 
 <hr/>
 
