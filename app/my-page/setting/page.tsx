@@ -65,12 +65,6 @@ export default function Settings() {
           <RightArrowLogo />
         </div>
       </div>
-
-      {/* 다크 모드 토글 */}
-      <div className="p-4 bg-white mt-4 flex justify-between items-center">
-        <span className="font-medium">다크 모드</span>
-        <Switch defaultChecked={false} />
-      </div>
     </div>
   );
 }
